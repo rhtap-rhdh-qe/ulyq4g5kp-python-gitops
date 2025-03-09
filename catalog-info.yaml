@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ulyq4g5kp-python-gitops
+  description: This is GitOps manifest for ulyq4g5kp-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ulyq4g5kp-python
+    backstage.io/kubernetes-id: ulyq4g5kp-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ulyq4g5kp-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ulyq4g5kp-python
